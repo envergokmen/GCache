@@ -5,11 +5,6 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Compile Remove="SwCacheService.cs" />
-    <Compile Remove="WeatherForecast.cs" />
-  </ItemGroup>
-
-  <ItemGroup>
     <None Remove="gcache.proto" />
   </ItemGroup>
 

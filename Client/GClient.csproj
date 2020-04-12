@@ -17,7 +17,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Protobuf Include="..\..\Server\GCache\GCache\gcache.proto" GrpcServices="Client">
+    <Protobuf Include="..\Server\gcache.proto" GrpcServices="Client">
       <Link>Protos\gcache.proto</Link>
     </Protobuf>
   </ItemGroup>
