@@ -1,0 +1,42 @@
+syntax = "proto3";
+import "google/protobuf/timestamp.proto";
+
+
+option csharp_namespace = "GCache";
+
+package gcache;
+
+// The greeting service definition.
+service Caching {
+  // Sends a greeting
+  rpc GetCache (CacheVM) returns (CacheVM);
+  rpc SetCache (CacheVM) returns (CacheVM);
+  rpc RemoveCache (CacheVM) returns (CacheVM);
+  rpc RemoveAllCache (CacheVM) returns (CacheVM);
+  rpc RemoveCacheStartsWith (CacheVM) returns (CacheVM);
+  //rpc Manage (CacheVM) returns (CacheVM);
+  rpc GetKeys (CacheVM) returns (KeyResponse);
+  rpc GetAll (CacheVM) returns (AllItemsReponse);
+  rpc Flush (CacheVM) returns (CacheVM);
+}
+
+// The request message containing the user's name.
+message CacheVM {
+  string key = 1;
+  string value = 2;
+  google.protobuf.Timestamp expiresAt = 3;
+  string source = 4;
+  bool succeed = 5;
+
+}
+
+message KeyResponse {
+    repeated string keys = 1;
+}
+
+message AllItemsReponse {
+    repeated CacheVM items = 1;
+}
+
+// The response message containing the greetings.
+
